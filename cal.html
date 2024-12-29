@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>calculator</title>
+</head>
+<body>
+           <div id="main">
+            <div>
+                <input type="text" id="display1" onclick="">
+            </div>
+            
+            <div id="allb">
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button onclick="append('+')">+</button>
+                <br>
+                
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button onclick="append('-')">-</button>
+                <br>
+                
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button onclick="append('/')">/</button>
+                <br>
+               
+                <button onclick="append('0')">0</button>
+                <button onclick="append('.')"> .</button>
+                <button onclick="displayclear()">CE</button>
+                <button onclick="append('*')">x</button>
+                <br>
+                
+                <button onclick="append('(')">( </button>
+                <button onclick="append(')')">)</button>
+                <button onclick="append('%')">%</button>
+                <button onclick="calculate()">=</button>
+            </div>
+           </div>
+          
+           <script>
+            var d=document.getElementById("display1");
+            function displayclear(){
+                d.value='0';
+            }
+            function append(n){  
+                console.log(n)
+                if(d.value==="0"||d.value==="Error")
+                {
+                    d.value=n;
+                }else{
+                d.value+=n;
+                console.log(d.value)
+                }
+            }
+           function calculate(value)
+           {
+            try
+            {
+                d.value=eval(d.value);
+            }catch(error){
+               d.value="Error";
+            }
+            console.log(d.value)
+           }
+           </script>
+           <style>
+            body{
+
+display: flex;
+justify-content: center; 
+align-items: center;  
+/* height: 100vh; */
+
+}
+input{
+padding-top: 15px;
+text-justify: auto;
+font-size: x-large;
+margin-bottom: 15px;
+}
+button{
+width: 20%;
+font-size: 15px;
+border-style:initial ;
+padding: 20px;
+margin: 5px;  
+background-color:#007BFF;
+cursor: pointer;
+}
+#main{
+background-color: chartreuse;
+padding: 40px;
+}
+#allb{
+
+padding: 10px;
+
+}
+ </style>
+         
+</body>
+
+</html>
